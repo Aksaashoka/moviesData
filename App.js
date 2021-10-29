@@ -1,14 +1,15 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import {SafeAreaView, Text, View} from 'react-native';
+import Home from './screens/Home';
 
 const App = () => {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>
-        Try editing me! 🎉
-      </Text>
+    //  <SafeAreaView>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Home />
     </View>
+    //</SafeAreaView>
   );
-}
+};
 
 export default App;
