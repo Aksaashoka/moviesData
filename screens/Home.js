@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, StyleSheet, Dimensions, FlatList} from 'react-native';
+import {View, StyleSheet, Dimensions} from 'react-native';
 import {getPopularMovies, getUpcomingMovies} from '../services/services';
 import {SliderBox} from 'react-native-image-slider-box';
+import List from '../components/List';
 const dimensions = Dimensions.get('screen');
 const Home = () => {
-  console.log(dimensions);
   const [moviesImages, setMoviesImages] = useState([]);
   const [popularMovies, setPopularMovies] = useState('');
   const [error, setError] = useState({});
@@ -43,9 +43,7 @@ const Home = () => {
         />
       </View>
       <View style={styles.carousel}>
-        <FlatList
-          data={popularMovies}
-          renderItem={({item}) => <Text>{item.title}</Text>}></FlatList>
+        <List title="Most popular movies" content={popularMovies} />
       </View>
     </>
   );
