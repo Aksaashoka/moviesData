@@ -8,19 +8,16 @@ export const getPopularMovies = async () => {
   const resp = await axios.get(`${API_URL}/movie/popular?${API_KEY}`);
   return resp.data.results;
 };
-
 //Get Upcoming Movies
 export const getUpcomingMovies = async () => {
   const resp = await axios.get(`${API_URL}/movie/upcoming?${API_KEY}`);
   return resp.data.results;
 };
-
 //Get Popular Tv
 export const getPopularTv = async () => {
   const resp = await axios.get(`${API_URL}/tv/popular?${API_KEY}`);
   return resp.data.results;
 };
-
 // Get Musical Movies
 export const getMusicalMovies = async () => {
   const resp = await axios.get(
@@ -34,4 +31,9 @@ export const getFantasyMovies = async () => {
     `${API_URL}/discover/movie?${API_KEY}&&with_genres=14`,
   );
   return resp.data.results;
+};
+// Get Movie Detail
+export const getMovie = async id => {
+  const resp = await axios.get(`${API_URL}/movie/${id}?${API_KEY}`);
+  return resp.data;
 };

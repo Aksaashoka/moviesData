@@ -17,12 +17,13 @@ import {SliderBox} from 'react-native-image-slider-box';
 import List from '../components/List';
 import Error from '../components/Error';
 const dimensions = Dimensions.get('screen');
-const Home = () => {
+const Home = ({navigation}) => {
   const [moviesImages, setMoviesImages] = useState();
   const [popularMovies, setPopularMovies] = useState();
   const [popularTv, setPopularTv] = useState();
   const [musicalMovies, setMusicalMovies] = useState();
   const [fantasyMovies, setFantasyMovies] = useState();
+
   const [loaded, setLoaded] = useState();
   const [error, setError] = useState(false);
 
@@ -84,25 +85,41 @@ const Home = () => {
 
           {popularMovies && (
             <View style={styles.carousel}>
-              <List title="Most popular movies" content={popularMovies} />
+              <List
+                navigation={navigation}
+                title="Most popular movies"
+                content={popularMovies}
+              />
             </View>
           )}
 
           {popularTv && (
             <View style={styles.carousel}>
-              <List title="Popular Series" content={popularTv} />
+              <List
+                navigation={navigation}
+                title="Popular Series"
+                content={popularTv}
+              />
             </View>
           )}
 
           {musicalMovies && (
             <View style={styles.carousel}>
-              <List title="Musical" content={musicalMovies} />
+              <List
+                navigation={navigation}
+                title="Musical"
+                content={musicalMovies}
+              />
             </View>
           )}
 
           {fantasyMovies && (
             <View style={styles.carousel}>
-              <List title="Fantasy" content={fantasyMovies} />
+              <List
+                navigation={navigation}
+                title="Fantasy"
+                content={fantasyMovies}
+              />
             </View>
           )}
         </ScrollView>

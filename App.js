@@ -1,14 +1,20 @@
 import React from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
+import {View} from 'react-native';
 import Home from './screens/Home';
+import Detail from './screens/Detail';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    //  <SafeAreaView>
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Home />
-    </View>
-    //</SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Detail" component={Detail} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
